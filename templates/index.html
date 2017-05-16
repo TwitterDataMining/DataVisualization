@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container-fluid">
+        <form class="form-group" method="post">
+
+            {{ form.hidden_tag() }}
+            {{ form.username() }}
+            {{ form.password() }}
+
+
+            <button class="alert-danger" type="submit" value="login" name="login">log in</button>
+
+        </form>
+    </div>
+{% endblock %}
+</html>

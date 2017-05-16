@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class=" container">
+     <div class="container-fluid row">
+{#        {% for tweet in tweets %}#}
+            <div class="col-sm-8">
+                <p>
+               {{ tweets|safe }}
+                </p>
+            </div>
+{#        {% endfor %}#}
+        <div class="col-sm-4">
+            <form class="form custom-controls-stacked" method="post">
+                {% for topic in topics %}
+                <div class="form-control">
+                    <input type="checkbox" name="selected" value="{{ topic }}">
+                    <span style="color: {{ colors[loop.index0] }}; background-color: {{ colors[loop.index0 + 1] }}">{{ topic }}</span>
+
+                </div>
+                {% endfor %}
+                <div>
+                    <button type=submit class="btn-danger">Update</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+        <a href="{{ url_for('hello_world')}}"> click here</a>
+    </div>
+{% endblock %}
